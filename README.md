@@ -46,7 +46,7 @@ flowchart TD
 
 ### 1. Prerequisites
 - **Python**: 3.10 to 3.13
-- **Node.js**: v18+ & npm
+- **Node.js**: v20.19+ or v22.12+ & npm
 - **FFmpeg**: Installed and in PATH (or auto-detected by CineDub AI)
 
 ### Provider credentials
