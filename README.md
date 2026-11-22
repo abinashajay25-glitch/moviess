@@ -67,6 +67,9 @@ docker compose up --build
 ```
 Access the studio at `http://localhost:3000`.
 
+### Render Deployment
+Deploy the frontend as a Docker web service using the repository root as its root directory; the root `Dockerfile` builds and serves the frontend. Deploy the backend as a separate Docker web service using `backend` as its root directory. Set `BACKEND_URL` on the frontend service to the backend's public URL, without a trailing slash (for example, `https://your-backend.onrender.com`). Render sets `PORT` for the backend; the backend container listens on that port. Configure provider keys as backend environment variables when needed.
+
 ---
 
 ## 📡 REST API Reference
