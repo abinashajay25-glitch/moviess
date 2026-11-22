@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cinedub-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - AUDIO_API_KEY=sk_9abcefe9f23fd782c1d3444a292c370698a7307f2dbc8b00
+      - ELEVENLABS_API_KEY=sk_9abcefe9f23fd782c1d3444a292c370698a7307f2dbc8b00
+      - NVIDIA_API_KEY=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
+      - SARVAM_API_KEY=sk_hp0hzdlj_RQYm3lY3xqY4ztl3fczi3A7d
+    volumes:
+      - ./backend/storage:/app/storage
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cinedub-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
