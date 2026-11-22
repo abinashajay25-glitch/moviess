@@ -24,6 +24,14 @@ venv/
 ENV/
 .venv
 
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
 # SQLite Database
 *.db
 *.sqlite3

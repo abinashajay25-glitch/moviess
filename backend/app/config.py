@@ -22,10 +22,10 @@ class Settings(BaseSettings):
     MAX_UPLOAD_SIZE_GB: float = 10.0
 
     # API Keys
-    AUDIO_API_KEY: str = "sk_9abcefe9f23fd782c1d3444a292c370698a7307f2dbc8b00"
-    ELEVENLABS_API_KEY: str = "sk_9abcefe9f23fd782c1d3444a292c370698a7307f2dbc8b00"
-    NVIDIA_API_KEY: str = "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"
-    SARVAM_API_KEY: str = "sk_hp0hzdlj_RQYm3lY3xqY4ztl3fczi3A7d"
+    AUDIO_API_KEY: str = ""
+    ELEVENLABS_API_KEY: str = ""
+    NVIDIA_API_KEY: str = ""
+    SARVAM_API_KEY: str = ""
 
     # Engine configs
     DEFAULT_TTS_ENGINE: str = "hybrid"  # sarvam, elevenlabs, edge_tts, hybrid
@@ -37,7 +37,7 @@ class Settings(BaseSettings):
     ALLOWED_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000"
 
     class Config:
-        env_file = ".env"
+        env_file = Path(__file__).resolve().parent.parent / ".env"
         extra = "allow"
 
     @property

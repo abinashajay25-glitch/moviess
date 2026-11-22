@@ -49,6 +49,9 @@ flowchart TD
 - **Node.js**: v18+ & npm
 - **FFmpeg**: Installed and in PATH (or auto-detected by CineDub AI)
 
+### Provider credentials
+Provider API keys are optional when using Edge-TTS. Copy `.env.example` to `.env` for Docker Compose, or to `backend/.env` for local backend startup, and enter only the provider keys you use. Never commit either environment file. Any credentials previously committed to this repository should be revoked and replaced.
+
 ### 2. Quick Launch (Windows)
 Double-click `run_all.bat` or run:
 ```cmd
